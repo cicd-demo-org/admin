@@ -1,0 +1,4 @@
+# Optional safe-settings example. The setup script owns demo resources.
+# Install and configure safe-settings separately before using this file.
+repository:
+  private: false
