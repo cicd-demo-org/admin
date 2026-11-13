@@ -2,7 +2,9 @@
 
 `scripts/setup.py` reconciles a narrowly targeted organization ruleset,
 `DEMO_MODE=simulation`, three application environments, and the demo reviewer
-team. It requires `gh` authenticated as an organization administrator with
+team. The user supplied to `--approver`, **not the team**, is the `prod`
+reviewer. The demo allows that user to approve their own run; team membership
+does not grant environment-reviewer status. It requires `gh` authenticated as an organization administrator with
 `admin:org`, `repo`, and `workflow` scopes. It creates or updates the resources
 it names; inspect its effects before running it in any existing organization.
 
@@ -24,3 +26,7 @@ integration.
 `.github/settings.yml` is an **optional** safe-settings example; no GitHub App
 is installed or run by this project. Do not have both tools manage the same
 fields without a deliberate ownership policy.
+
+The optional `real-prod` environment and restricted deployment runner are
+deliberately **not** created by this script. See the real deployment guide in
+`governance-docs` before configuring either.
